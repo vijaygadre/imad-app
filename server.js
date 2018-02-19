@@ -1,4 +1,6 @@
+// This is the framework to create web server for handling all the http traffic
 var express = require('express');
+// morgan is use to output log of our server - track incoming request and outgoing responses
 var morgan = require('morgan');
 var path = require('path');
 
@@ -17,6 +19,22 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
+
+app.get('/article-one', function (req, res) {
+    res.send('Article - one will be served here');
+  //res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+});
+
+
+app.get('/article-two', function (req, res) {
+    res.send('Article - two will be served here');
+  //res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+});
+
+app.get('/article-three', function (req, res) {
+    res.send('Article - three will be served here');
+  //res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+});
 
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
